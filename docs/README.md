@@ -1,5 +1,5 @@
 
-# @raydeck/event-manager - v1.0.0
+# @raydeck/event-manager - v1.0.1
 
 ## Index
 
@@ -21,7 +21,7 @@
 
 • **listeners**: *object*
 
-*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L1)*
+*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L1)*
 
 #### Type declaration:
 
@@ -33,7 +33,7 @@
 
 ▸ **addListener**(`key`: string, `f`: function): *function*
 
-*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L18)*
 
 Add a listener for event `key`
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **clear**(`key`: string): *void*
 
-*Defined in [index.ts:41](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L41)*
+*Defined in [index.ts:41](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L41)*
 
 Remove all event listeners for identifier `key`
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **getListeners**(`key`: string): *function[]*
 
-*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L7)*
 
 get all listener functions for identifier `key`
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **remove**(`key`: string, `f`: function): *void*
 
-*Defined in [index.ts:50](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L50)*
+*Defined in [index.ts:50](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L50)*
 
 Remove one event listener
 Note that using the return value of `addTrigger` is easier API
@@ -134,7 +134,7 @@ ___
 
 ▸ **trigger**(`key`: string, `options`: object): *Promise‹void›*
 
-*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/e14d159/src/index.ts#L33)*
+*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/c010d1f/src/index.ts#L33)*
 
 Trigger the event `key`
 
