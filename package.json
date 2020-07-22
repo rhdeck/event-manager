@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "tsc && typedoc --readme none --mode file --excludeNotExported --includeVersion && git commit docs -m \"docs: updating docs\" && git push",
+    "build": "tsc && typedoc --readme stub.md --mode file --excludeNotExported --includeVersion && cp docs/README.md . && git commit docs README.md -m \"docs: updating docs\" && git push",
     "watch": "livelink watch",
     "prepublishOnly": "yarn build"
   },
