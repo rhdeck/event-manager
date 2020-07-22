@@ -1,0 +1,20 @@
+{
+  "name": "@raydeck/event-manager",
+  "version": "1.0.0",
+  "description": "Base class for managing events",
+  "main": "lib/index.js",
+  "types": "lib/types",
+  "repository": "https://github.com/rhdeck/event-manager",
+  "author": "Ray Deck",
+  "license": "MIT",
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "tsc && typedoc --readme none --mode file --excludeNotExported --includeVersion && git commit docs -m \"docs: updating docs\" && git push",
+    "watch": "livelink watch",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.7"
+  }
+}
