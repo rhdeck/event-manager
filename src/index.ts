@@ -26,17 +26,13 @@ export function addListener(
   };
 }
 /**
- * Trigger the event `key`
+ * Trigger the event `key`. Note that if an trigger handler throws, it will stop the show.
  * @param key identifier for event to trigger
  * @param options map of options to pass to the listener functions
  */
 export async function trigger(key: string, options: { [key: string]: any }) {
-  try {
-    const listeners = getListeners(key);
-    await Promise.all(listeners.map((listener) => listener(options)));
-  } catch (e) {
-    error(e);
-  }
+  const listeners = getListeners(key);
+  await Promise.all(listeners.map((listener) => listener(options)));
 }
 /**
  * Remove all event listeners for identifier `key`
