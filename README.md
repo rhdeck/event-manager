@@ -2,7 +2,7 @@
 <a name="readmemd"></a>
 
 
-# @raydeck/event-manager - v1.1.0
+# @raydeck/event-manager - v1.1.1
 
 ## Index
 
@@ -26,7 +26,7 @@
 
 • **listeners**: *object*
 
-*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L1)*
+*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L1)*
 
 #### Type declaration:
 
@@ -38,7 +38,7 @@
 
 ▸ **addListener**(`key`: string, `f`: function): *function*
 
-*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L18)*
 
 Add a listener for event `key`
 
@@ -72,7 +72,7 @@ ___
 
 ▸ **clear**(`key`: string): *void*
 
-*Defined in [index.ts:45](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L45)*
+*Defined in [index.ts:41](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L41)*
 
 Remove all event listeners for identifier `key`
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **error**(`e`: Error): *void*
 
-*Defined in [index.ts:60](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L60)*
+*Defined in [index.ts:56](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L56)*
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **getListeners**(`key`: string): *function[]*
 
-*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L7)*
 
 get all listener functions for identifier `key`
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **remove**(`key`: string, `f`: function): *void*
 
-*Defined in [index.ts:54](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L54)*
+*Defined in [index.ts:50](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L50)*
 
 Remove one event listener
 Note that using the return value of `addTrigger` is easier API
@@ -155,7 +155,7 @@ ___
 
 ▸ **setError**(`newHandler`: function): *void*
 
-*Defined in [index.ts:67](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L67)*
+*Defined in [index.ts:63](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L63)*
 
 Set the error handler for trigger (default is just a no-op to squelch the throw)
 
@@ -179,9 +179,9 @@ ___
 
 ▸ **trigger**(`key`: string, `options`: object): *Promise‹void›*
 
-*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/7054216/src/index.ts#L33)*
+*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L33)*
 
-Trigger the event `key`
+Trigger the event `key`. Note that if an trigger handler throws, it will stop the show.
 
 **Parameters:**
 
