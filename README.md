@@ -2,19 +2,19 @@
 <a name="readmemd"></a>
 
 
-# @raydeck/event-manager - v1.1.1
+# @raydeck/event-manager - v1.2.0
 
 ## Index
 
 ### Variables
 
+* [error](#let-error)
 * [listeners](#const-listeners)
 
 ### Functions
 
 * [addListener](#addlistener)
 * [clear](#clear)
-* [error](#let-error)
 * [getListeners](#getlisteners)
 * [remove](#remove)
 * [setError](#seterror)
@@ -22,11 +22,29 @@
 
 ## Variables
 
+### `Let` error
+
+• **error**: *function*
+
+*Defined in [index.ts:64](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L64)*
+
+#### Type declaration:
+
+▸ (`e`: Error): *void | undefined*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`e` | Error |
+
+___
+
 ### `Const` listeners
 
 • **listeners**: *object*
 
-*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L1)*
+*Defined in [index.ts:1](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L1)*
 
 #### Type declaration:
 
@@ -38,7 +56,7 @@
 
 ▸ **addListener**(`key`: string, `f`: function): *function*
 
-*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L18)*
+*Defined in [index.ts:18](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L18)*
 
 Add a listener for event `key`
 
@@ -72,7 +90,7 @@ ___
 
 ▸ **clear**(`key`: string): *void*
 
-*Defined in [index.ts:41](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L41)*
+*Defined in [index.ts:49](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L49)*
 
 Remove all event listeners for identifier `key`
 
@@ -86,27 +104,11 @@ Name | Type | Description |
 
 ___
 
-### `Let` error
-
-▸ **error**(`e`: Error): *void*
-
-*Defined in [index.ts:56](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L56)*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`e` | Error |
-
-**Returns:** *void*
-
-___
-
 ###  getListeners
 
 ▸ **getListeners**(`key`: string): *function[]*
 
-*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L7)*
 
 get all listener functions for identifier `key`
 
@@ -124,7 +126,7 @@ ___
 
 ▸ **remove**(`key`: string, `f`: function): *void*
 
-*Defined in [index.ts:50](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L50)*
+*Defined in [index.ts:58](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L58)*
 
 Remove one event listener
 Note that using the return value of `addTrigger` is easier API
@@ -155,9 +157,9 @@ ___
 
 ▸ **setError**(`newHandler`: function): *void*
 
-*Defined in [index.ts:63](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L63)*
+*Defined in [index.ts:69](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L69)*
 
-Set the error handler for trigger (default is just a no-op to squelch the throw)
+Set the error handler for trigger (default is just to permit the throw)
 
 **Parameters:**
 
@@ -179,7 +181,7 @@ ___
 
 ▸ **trigger**(`key`: string, `options`: object): *Promise‹void›*
 
-*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/b1dc4a4/src/index.ts#L33)*
+*Defined in [index.ts:33](https://github.com/rhdeck/event-manager/blob/2eff070/src/index.ts#L33)*
 
 Trigger the event `key`. Note that if an trigger handler throws, it will stop the show.
 
