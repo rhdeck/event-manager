@@ -32,7 +32,15 @@ export function addListener(
  */
 export async function trigger(key: string, options: { [key: string]: any }) {
   const listeners = getListeners(key);
-  await Promise.all(listeners.map((listener) => listener(options)));
+  try {
+    await Promise.all(listeners.map((listener) => listener(options)));
+  } catch (e) {
+    if (error) {
+      error(e);
+    } else {
+      throw e;
+    }
+  }
 }
 /**
  * Remove all event listeners for identifier `key`
@@ -53,11 +61,9 @@ export function remove(
 ) {
   listeners[key] = listeners[key].filter((func) => func !== f);
 }
-let error = (e: Error) => {
-  /* Do nothing */
-};
+let error: (e: Error) => void | undefined;
 /**
- * Set the error handler for trigger (default is just a no-op to squelch the throw)
+ * Set the error handler for trigger (default is just to permit the throw)
  * @param newHandler
  */
 export function setError(newHandler: (e: Error) => void) {
