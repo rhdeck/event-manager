@@ -33,7 +33,8 @@ export function addListener(
 export async function trigger(key: string, options: { [key: string]: any }) {
   const listeners = getListeners(key);
   try {
-    await Promise.all(listeners.map((listener) => listener(options)));
+    if (listeners && listeners.length)
+      await Promise.all(listeners.map((listener) => listener(options)));
   } catch (e) {
     if (error) {
       error(e);
