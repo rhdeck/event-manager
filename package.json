@@ -1,6 +1,6 @@
 {
   "name": "@raydeck/event-manager",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Base class for managing events",
   "main": "lib/index.js",
   "types": "lib/types",
