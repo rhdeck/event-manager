@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "tsc",
+    "build": "tsc && yarn pack -f package.tgz",
     "docs": "typedoc --theme markdown --readme none --mode file --excludeNotExported --includeVersion --out docstemp && rm README.md ; concat-md docstemp > README.md && rm -rf docstemp",
     "prepublishOnly": "yarn build && yarn docs && git commit README.md -m \"docs: updating docs\" && git push"
   },
